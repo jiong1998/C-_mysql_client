@@ -17,6 +17,46 @@ C++下的mysql客户端开发
 
 它是个什么项目？——在C++下利用Mysql API实现Mysql的功能的类Mysql的客户端，助力初学者快速熟悉Mysql命令以及Mysql API
 
+## 整体流程
+流程是用C写的，和C++用类实现大差不差，主要看看整体流程的逻辑
+```
+mysql客户端编写思路分析:
+1 mysql初始化--mysql_init
+2 连接mysql数据库---mysql_real_connect
+3 while(1)
+  {
+  	//打印提示符:write(STDOUT_FILENO, "mysql >", strlen("mysql >"));
+  	//读取用户输入: read(STDIN_FILENO, buf, sizeof(buf))
+  	//判断用户输入的是否为退出: QUIT quit exit EXIT
+  	if(strncasecmp(buf, "exit", 4)==0 || strncasecmp(buf, "quit", 4)==0)
+  	{
+  		//关闭连接---mysql_close();
+  		exit();
+  	}
+  	
+  	//执行sql语句--mysql_query();
+  	
+  	//若不是select查询, 打印执行sql语句影响的行数--mysql_affected_rows();
+  	if(strncasecmp(buf, "select", 6)!=0)
+  	{
+  		printf("Query OK, %d row affected", mysql_affected_rows());
+  		continue;
+  	}
+  	
+  	//若是select查询的情况
+  		---//获取列数: mysql_field_count()
+  	//获取结果集: mysql_store_result()
+  		--获取列数: int mysql_num_fields();
+  	//获取表头信息并打印表头信息:mysql_fetch_fields();
+  		
+  	//循环获取每一行记录并打印: mysql_fetch_row()
+  	//释放结果集: mysql_free_result()
+  	
+  }
+  
+4 关闭连接: mysql_close();
+```
+
 ## 代码分析：
 主要实现CRUD操作，增删改操作不需要额外处理，所以可以放一起操作，而查由于需要获取结果集，所以需要单独处理。
 

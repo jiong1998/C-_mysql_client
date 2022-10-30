@@ -6,7 +6,7 @@ C++下的mysql客户端开发
 先展示一下效果图
 下图是正宗的mysql：
 
-<img width="588" alt="image" src="https://user-images.githubusercontent.com/77431730/198860488-62d1ad0d-cf6c-41f8-9db8-e736d13460ac.png">
+<img width="588" alt="image" src="https://user-images.githubuFsercontent.com/77431730/198860488-62d1ad0d-cf6c-41f8-9db8-e736d13460ac.png">
 
 下图是我利用Mysql API函数，实现一个类Mysql的客户端窗口：
 
@@ -262,7 +262,7 @@ int main()
 {
     char buf[1024];
     //初始化、连接数据库
-    Mysql mysql=Mysql("localhost", "root", "Aa82981388", "heima", 0);
+    Mysql mysql=Mysql("localhost", "root", "thisispw", "thisistable", 0);
     while(1)
     {
         //将"mysql"输出到终端

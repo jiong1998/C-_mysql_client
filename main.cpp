@@ -36,7 +36,7 @@ int main()
 {
     char buf[1024];
     //初始化、连接数据库
-    Mysql mysql=Mysql("localhost", "root", "Aa82981388", "heima", 0);
+    Mysql mysql=Mysql("localhost", "root", "thisispw", "thisistable", 0);
     while(1)
     {
         //将"mysql"输出到终端

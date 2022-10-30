@@ -2,8 +2,13 @@
 C++下的mysql客户端开发
 
 先展示一下效果图
+下图是正宗的mysql：
+<img width="588" alt="image" src="https://user-images.githubusercontent.com/77431730/198860488-62d1ad0d-cf6c-41f8-9db8-e736d13460ac.png">
 
+下图是我利用Mysql API函数，实现一个类Mysql的客户端窗口
+<img width="578" alt="image" src="https://user-images.githubusercontent.com/77431730/198860513-063fa933-84cd-4e7f-9aca-1afdf7d2c97c.png">
 
+## 案例分析
 需求：在C++下，利用Mysql API函数，实现一个类Mysql的客户端窗口，实现对mysql数据库的操作
 
 它是个什么项目？——在C++下利用Mysql API实现Mysql的功能的类Mysql的客户端，助力初学者快速熟悉Mysql命令以及Mysql API

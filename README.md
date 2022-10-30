@@ -258,8 +258,6 @@ int clean_buf(char * buf)
 最后，主体main函数主要实现循环的功能。
 具体实现如下：
 ```cpp
-
-```
 int main()
 {
     char buf[1024];
@@ -283,6 +281,8 @@ int main()
         mysql.execute_sql(buf);
     }
 }
+```
+
 ```
 输出结果
 before:utf8mb4

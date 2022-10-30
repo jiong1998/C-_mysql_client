@@ -255,6 +255,34 @@ int clean_buf(char * buf)
 }
 ```
 
+最后，主体main函数主要实现循环的功能。
+具体实现如下：
+```cpp
+
+```
+int main()
+{
+    char buf[1024];
+    //初始化、连接数据库
+    Mysql mysql=Mysql("localhost", "root", "Aa82981388", "heima", 0);
+    while(1)
+    {
+        //将"mysql"输出到终端
+        write(STDIN_FILENO,"mysql> ",strlen("mysql> "));
+
+        //获取用户输入
+        memset(buf,0x00,sizeof(buf));
+        read(STDOUT_FILENO, buf, sizeof(buf));
+
+        //处理buf异常情况
+        int flag = clean_buf(buf);
+        if(flag==1)
+            continue;
+
+        //判断是什么语句,然后自动执行相应的语句
+        mysql.execute_sql(buf);
+    }
+}
 ```
 输出结果
 before:utf8mb4

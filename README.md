@@ -1,6 +1,9 @@
 # C-_mysql_client
 C++下的mysql客户端开发
 
+先展示一下效果图
+
+
 需求：在C++下，利用Mysql API函数，实现一个类Mysql的客户端窗口，实现对mysql数据库的操作
 
 它是个什么项目？——在C++下利用Mysql API实现Mysql的功能的类Mysql的客户端，助力初学者快速熟悉Mysql命令以及Mysql API
